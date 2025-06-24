@@ -1,0 +1,44 @@
+### Example Workflow ###
+# Make changes to your files
+Typing really fast. Creating files. Working really hard. Being amazing!
+
+# Stage the changes
+# If you created a file/directory or made modifications inside a file, use git add.
+# Example, created a file called index.html, modified a file called script.js, and created a directory called project;
+git add index.html script.js project
+
+# If you deleted a file/directory, use git rm.
+# Example, deleted a file called style.css and deleted a directory called docs
+git rm style.css docs
+
+# If you change a file/directory name or move a file/directory, use git mv.
+# Examples,
+# Renamed a file called test.html to index.html
+# Renamed a directory called fake to real
+# Moved a file called note.txt into a directory called Documents
+git mv test.html index.html
+git mv fake real
+git mv note.txt Documents/note.txt
+
+# Or, to stage all changes, including created/deleted/modified/name-changed/etc., run;
+git add .
+
+# Commit the changes. This allows the changes you have made in your local repo to be merged with the remote repo when you use git pull.
+git commit -m "Your commit message describing the changes"
+
+# Pull the latest changes from the remote repository. This merges the work that you staged and commited in your local repo with it's remote counterpart.
+git pull origin main
+
+# If there are any merge conflicts, resolve them manually, stage the resolved files, and commit the changes
+# Example, after running git pull origin main, you have these conflicts,
+# Your local repository index.html file has conflicts with the remote repository index.html file.
+# Your local repository README.md file has conflicts with the remote repository README.md file.
+# Resolve them manually, meaning, open each file with a text editor of your choice and fix the conflicts by either removing remote content or local content.
+# Once the files are resolved, stage them, again by running;
+git add index.html README.md
+# Now that you have staged them, you must commit them, again with a message by running;
+git commit -m "Resolved conflicts in the index.html and README.md files"
+
+# Push the changes to the remote repository. This will move everything, including your work, to the remote repository.
+# Your local repository and the remote repository will be exact, in sync. Others can now work off your efforts and you can continue working off it as well.
+git push origin main
